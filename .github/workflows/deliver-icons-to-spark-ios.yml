@@ -20,7 +20,6 @@ jobs:
         uses: actions/setup-node@v6.2.0
         with:
           node-version: lts/Hydrogen
-          cache: "npm"
       # TODO: Needed ?
       # - name: Install svgo
       #   run: npm -g install svgo@4.0.0
