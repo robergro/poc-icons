@@ -25,10 +25,10 @@ jobs:
       #   run: npm -g install svgo@4.0.0
       - name: Deliver Icons To Spark iOS
         uses: cpina/github-action-push-to-another-repository@v1.7.3
-        # env:
-        #   SSH_DEPLOY_KEY: ${{ secrets.SSH_DEPLOY_KEY_IOS }}
         env:
-          API_TOKEN_GITHUB: ${{ secrets.GITHUB_TOKEN }} 
+          SSH_DEPLOY_KEY: ${{ secrets.SSH_DEPLOY_KEY_IOS }}
+        # env:
+        #   API_TOKEN_GITHUB: ${{ secrets.GITHUB_TOKEN }} 
         with:
           source-directory: "assets/icons"
           destination-github-username: "robergro"
@@ -41,3 +41,9 @@ jobs:
           target-branch: chore-updated-icons
           create-target-branch-if-needed: true
           target-directory: "spark-token/iconography"
+
+# TODO: move to DoC
+# You'll need to:
+# Generate an SSH deploy key for the poc-monorepo-2 repository with write access
+# Add it as a secret named SSH_DEPLOY_KEY_IOS in the poc-icons repository settings
+# This approach uses SSH authentication which is more suitable for cross-repository pushes than the default GITHUB_TOKEN.
