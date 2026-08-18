@@ -30,7 +30,7 @@ jobs:
         env:
           API_TOKEN_GITHUB: ${{ secrets.GITHUB_TOKEN }} 
         with:
-          source-directory: "assets/spark/icons"
+          source-directory: "assets/icons"
           destination-github-username: "robergro"
           destination-repository-name: "poc-monorepo-2"
           user-email: ${{ secrets.API_GITHUB_COMMIT_EMAIL }}
