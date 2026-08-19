@@ -9,7 +9,7 @@ on:
       - "assets/icons/*"
 
 jobs:
-  deliver_icons_to_spark_android:
+  deliver_icons_to_spark_ios:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
@@ -41,9 +41,3 @@ jobs:
           target-branch: chore-updated-icons
           create-target-branch-if-needed: true
           target-directory: "spark-token/iconography"
-
-# TODO: move to DoC
-# You'll need to:
-# Generate an SSH deploy key for the poc-monorepo-2 repository with write access
-# Add it as a secret named SSH_DEPLOY_KEY_IOS in the poc-icons repository settings
-# This approach uses SSH authentication which is more suitable for cross-repository pushes than the default GITHUB_TOKEN.
