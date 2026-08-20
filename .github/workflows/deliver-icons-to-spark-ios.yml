@@ -27,15 +27,13 @@ jobs:
         uses: cpina/github-action-push-to-another-repository@v1.7.3
         env:
           SSH_DEPLOY_KEY: ${{ secrets.SSH_DEPLOY_KEY_IOS }}
-        # env:
-        #   API_TOKEN_GITHUB: ${{ secrets.GITHUB_TOKEN }} 
         with:
           source-directory: "assets/icons"
           destination-github-username: "robergro"
           destination-repository-name: "poc-monorepo-2"
           user-email: ${{ secrets.API_GITHUB_COMMIT_EMAIL }}
           commit-message: |
-            feat(icons): update icons"
+            feat(icons): update icons
 
             See ORIGIN_COMMIT from $GITHUB_REF
           target-branch: chore-updated-icons
